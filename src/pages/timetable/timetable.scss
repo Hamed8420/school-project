@@ -1,0 +1,68 @@
+.content{
+
+  // background: linear-gradient(to bottom right, #ffffff, #0000ff);
+  flex: 6;
+  .tera{
+    background-image: url('../../../public/images/picture5.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 103vh;
+  }
+  .table {
+ 
+    border-collapse: collapse;
+    .tr {
+      width: 100%;
+      border-collapse: collapse;
+      height: 90vh; 
+  
+      .td {
+     
+        th {
+          background-color:  #6439ff;; 
+          color: #fff;
+          border: 1px solid #00f;
+          padding: 8px;
+       
+        }
+      }
+  
+      .ts {
+        td {
+          border: 1px solid rgb(82, 82, 247);
+          padding: 8px;
+        }
+        p{
+          font-size: 14px;
+          text-align: center;
+          color: rgb(27, 27, 243);
+          p{
+            margin-bottom: 5px;
+            font-size: 14px;
+            // color: #777;
+          }
+
+        }
+        td{
+          color: rgb(39, 39, 192);
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .edit-button{
+    padding: 10px;
+    background-color:rgb(75, 75, 245);
+    border-radius: 5px;
+    font-size: 16px;
+    width: 50%;
+    text-align: center;
+    margin:20px auto;
+    
+    a {
+      text-decoration: none;
+      color: #FFF;
+      font-weight: 500;
+    }
+  }
+}

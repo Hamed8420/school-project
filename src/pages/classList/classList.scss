@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+* {
+  font-family: poppins, 'sans-serif';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  transition: all .3s ease;
+  list-style: none;
+
+}
+.Container{
+    background-image: url('../../../public/images/picture8.jpg');
+    background-size: cover;
+    background-position: center;
+    flex: 6;
+    .class-list {
+      margin-top: 20px;
+      padding-left: 5%;
+      padding-right: 5%;
+      .test{
+        display: flex;
+        justify-content: space-between;
+        align-items: center ;
+  
+        .add{
+          padding: 10px;
+          background-color: #bae1f2;
+          border-radius: 14px;
+          font-size: 16px;
+          width: 25%;
+          border: none;
+          color: #FFF;
+          text-align: center;
+        }
+      }
+    
+    
+      h2 {
+        font-size: 24px;
+        color: transparent;
+        background: linear-gradient(to bottom right, #090955, #0000ff, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; /* يمكنك استبدالها بلون متناسق مع الـ Sidebar والـ Navbar */
+        margin-bottom: 10px;
+      }
+    
+      .zara {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 10px;
+      // padding-left: 5%;
+      margin-top: 4%;
+    
+      .tere{
+        background-color: transparent;
+        border: 1px solid #9b80ff;
+        align-items: center;
+        gap: 20px;
+        padding: 15px 5px;
+        border-radius: 35px;
+        margin-bottom: 20px; 
+      }
+        h2 {
+            font-size: 24px;
+    color: #FFF;
+    margin-bottom: 10px;
+    text-align: center;
+        }
+     
+    
+        p {
+          font-size: 16px;
+          // margin: 13px;
+          margin-top: 10px;
+          margin-bottom: 6px;
+          padding-left: 5px;
+        //   text-align: center;
+          width: 100%;
+          color: #00000079;
+        }
+      }
+      .buttons{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        button{
+          outline: none;
+          padding: 3px 5px;
+          border: none;
+          background-color: #bae1f2;
+          color: #FFF;
+          border-radius: 6px;
+          text-align: center;
+        }
+        .edite{
+          outline: none;
+          padding: 3px 5px;
+          border: none;
+          background-color: #bae1f2;
+          color: #FFF;
+          border-radius: 6px;
+          width: 40px;
+          text-align: center;
+        }
+      }
+
+    }
+  }

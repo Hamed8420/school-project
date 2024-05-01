@@ -1,0 +1,32 @@
+.zar{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin-top: 4%;
+}
+.gero{
+    border: 1px solid #000;
+    padding: 1px;
+    width: 250px;
+    border-radius: 5px
+}
+.gero img{
+    width: 100%;
+    border-radius: 5px;
+    height: 150px;
+    padding: 2px;
+    border-bottom: 2px solid #6439ff;
+}
+.tu{
+    padding: 8px;
+}
+ span{
+    font-size: 18px;
+    color: #6439ff;
+    font-weight: 500;
+}
+
+.h2{
+    font-size: 22px;
+    color: #035477;
+}

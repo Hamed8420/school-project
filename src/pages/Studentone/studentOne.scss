@@ -1,0 +1,51 @@
+.cantane{
+    background-image: url('../../../public/images/picture10.jpg');
+    background-size: cover;
+    background-position: center;
+    flex: 6;
+    .student-grades {
+        background-color: #1111588a;
+        border-radius: 24px;
+        margin-top: 50px;
+            width: 600px;
+            height: 450px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-left: 50%;
+          transform: translateX(-50%);
+      
+        h2 {
+            font-size: 32px;
+    margin-bottom: 10px;
+    color: #bae1f2;
+        }
+      
+        p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #FFF;
+            span{
+                color: #777;
+            }
+        }
+      
+        .grades-list {
+          list-style-type: none;
+          padding: 20px 0;
+          width: 40%;
+      
+          li {
+            border-bottom: 1px solid #bae1f2;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            span{
+                color: #777;
+                font-size: 16px;
+            }
+          }
+        }
+      }
+}

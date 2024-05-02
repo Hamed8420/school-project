@@ -50,8 +50,8 @@
     const AddLesson = () => {
       const [name, setName] = useState('');
       const [selectedImage, setSelectedImage] = useState(null);
-      const { id } = useParams();
-    //   console.log(id)
+      const { idsubject,Idsection } = useParams();
+      console.log(Idsection)
     
       const token = localStorage.getItem('accessToken');
     
@@ -68,9 +68,10 @@
         const formData = new FormData();
         formData.append('name', name);
         formData.append('file', selectedImage);
+        formData.append('sectionId',Idsection)
     
         try {
-          const response = await axios.post(`http://localhost:8000/api/lesson/addLesson/${id}`, formData, {
+          const response = await axios.post(`http://localhost:8000/api/lesson/addLesson/${idsubject}`, formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
               Authorization: `Bearer ${token}`,

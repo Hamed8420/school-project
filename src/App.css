@@ -34,6 +34,16 @@ body {
   background-color: #1eb2a6;
   color: #fff;
 }
+.pare{
+  display: flex;
+  justify-content: space-around;
+  font-size: 13px;
+  align-items: center;
+ 
+}
+.pare a{
+  color: #1eb2a6;
+}
 a {
   text-decoration: none;
 }

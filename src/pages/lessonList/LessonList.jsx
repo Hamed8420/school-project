@@ -9,13 +9,14 @@ import './lessonList.scss';
 
 function LessonsList() {
   const [lessons, setLessons] = useState([]);
-  const { id } = useParams();
+  const { idsubject,Idsection,Idclass } = useParams();
+  console.log(idsubject)
   const token = localStorage.getItem('accessToken');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/lesson/allLesson/${id}`,{
+        const response = await axios.get(`http://localhost:8000/api/lesson/allLesson/${idsubject}/${Idsection}`,{
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -30,24 +31,7 @@ function LessonsList() {
     fetchData();
   }, []);
 
-  // function saveFile(filePath, fileName) {
-  //   const token = localStorage.getItem('accessToken');
-  //   axios({
-  //     url: `http://localhost:8000/${filePath}`,
-  //     method: 'GET',
-  //     responseType: 'blob',
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   })
-  //     .then((response) => {
-  //       const blob = new Blob([response.data], { type: response.headers['content-type'] });
-  //       saveAs(blob, fileName);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }
+ 
 
   const handleDelete = (lessonId) => {
     axios
@@ -76,7 +60,7 @@ function LessonsList() {
         <div className='table'>
           <div className='test'>
             <h2>Lessons List...</h2>
-            <Link to={`/lessons/lesson/${id}/add`} className='add'>Add</Link>
+            <Link to={`/classes/section/${Idclass}/lessons/${Idsection}/lesson/${idsubject}/adde`} className='add'>Add</Link>
           </div>
 
           <div className='gara'>
@@ -96,12 +80,12 @@ function LessonsList() {
 ))}
 
                 <p>
-                  <Link to={`/lessons/lesson/${id}/question/${lesson.id}`}>Question</Link>
+                  <Link to={`/classes/section/${Idclass}/lessons/${Idsection}/lesson/${idsubject}/question/${lesson.id}`}>Question</Link>
                 </p>
 
                 <div className='buttons'>
                   <button onClick={() => handleDelete(lesson.id)}>delete</button>
-                  <Link to={`/lessons/lesson/${id}/edites/${lesson.id}`} className='edite'>
+                  <Link to={`/classes/section/${Idclass}/lessons/${Idsection}/lesson/${idsubject}/edites/${lesson.id}`} className='edite'>
                     Edit
                   </Link>
                 </div>

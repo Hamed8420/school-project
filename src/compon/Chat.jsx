@@ -50,8 +50,8 @@ const Chat = ({ socket }) => {
       groupId: chatId
     })
       .then(response => {
+        console.log(response.data.messages)
         setMessages(response.data.messages);
-        // console.log(response.data.messages)
       })
       .catch(error => {
         console.error(error);
@@ -72,7 +72,7 @@ const Chat = ({ socket }) => {
       room: chatId
     };
 
-    // setMessages(prevMessages => [...prevMessages, newMessage]); 
+    // setMessages(prevMessages => [...prevMessages, newMessage]);s 
 
     socket.emit('sendMessageToRoom', newMessage);
 

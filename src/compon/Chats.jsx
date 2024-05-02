@@ -43,12 +43,15 @@ const Chats = ({socket}) => {
 
   const handleJoinRoom = async (userId) => {
     try {
+      console.log("up")
       const response = await axios.post('http://localhost:8000/api/chat/createSingleChat', {
         senderId: Iduser,
         reciverId: userId
       });
+      console.log("down")
       const chatId = response.data.chat.id;
       socket.emit('enterRoom', { sender: Iduser, receiver: userId });
+      console.log('hhh')
       localStorage.setItem('chatId', chatId);
       console.log('Chat created:', chatId);
       setJoinRoomMessage('User joined the room successfully!');
@@ -87,7 +90,7 @@ const Chats = ({socket}) => {
               </span>
             </div>
           </div>
-          {joinRoomMessage && <p>{joinRoomMessage}</p>}
+          {/* {joinRoomMessage && <p>{joinRoomMessage}</p>} */}
         </Link>
       ))}
     </div>

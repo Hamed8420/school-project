@@ -23,7 +23,7 @@ import ServicesList from "./pages/serviceList/ServiceList";
 import EditService from "./pages/editService/EditService";
 import AddLesson from "./pages/AddLesson/AddLesson";
 import EditLesson from "./pages/EditLesson/EditLesson";
-import AddService from "./pages/AddService/AddService";
+import AddService from "./pages/AddService/EditSection";
 import Notication from "./pages/Notifcation/Notifcation";
 import AddNotifcation from "./pages/Addnotification/AddNotification";
 import EditNotifcation from "./pages/EditNotifcation/EditNtifcation";
@@ -60,9 +60,15 @@ import Hom from "./pages/hom/Hom";
 import Chat from "./compon/Chat";
 import GroupForm from "./compon/AddGroup/AddGroup";
 
+
 // import QuestionSubject from "./pages/QuestionSubject/QuestionSubject";
 import QuestionSubject from "./pages/QuestionSuject/QuestionSubject";
 import AddQuestionSub from "./pages/AddQuestionSub/AddQuestionSub";
+import AddClass from "./pages/AddClass/AddClass";
+import EditClass from "./pages/EditClass/EditClass";
+import ClassSection from "./components/classItem/ClassSection";
+import AddSection from "./pages/AddSection/AddSection";
+import EditSection from "./pages/AddService/EditSection";
 
 import io from 'socket.io-client';
 
@@ -101,10 +107,59 @@ function App() {
 
             <Route path="classes">
               <Route index element={<ClassList />} />
+              <Route path="add" element={<AddClass />} />
+              <Route path="edites/:Idclass" element={<EditClass />} />
+              
+              <Route path="section/:Idclass">
+              <Route index element={<ClassSection />} />
+              <Route path="add" element={<AddSection />} />
+              <Route path="edites/:Idsection" element={<EditSection />} />
+
+
+  <Route path="lessons/:Idsection">
+              <Route index element={<Subject  />} />
+              <Route path="adde" element={<AddSubject />} />
+              <Route path="edites/:id" element={<EditSubject />} />
+
+              
+              <Route path="quessub/:idsubject">
+
+                  <Route index element={<QuestionSubject  />} />
+                  {/* <Route path="edits/:questionId" element={<EditQuestion />} />  */}
+                  <Route path="addee" element={<AddQuestionSub />} /> 
+
+              </Route>
+
+          
+            <Route path="lesson/:idsubject">
+              <Route index element={<LessonsList  />} />
+              <Route path="adde" element={<AddLesson />} />
+              <Route path="edites/:id" element={<EditLesson />} />
+
+
+
+                  <Route path="question/:lessonId">
+
+                        <Route index element={<Quastion  />} />
+                        <Route path="edits/:questionId" element={<EditQuestion />} /> 
+                        <Route path="adde" element={<AddQuestion />} /> 
+
+                  </Route>
+
+            </Route>
+            
+
+              
+  </Route>
+              
+
+             
+            </Route>
+
               <Route path="timetable" element={<Timetable />} />
             </Route>
 
-
+{/* 
             <Route path="/lessons">
               <Route index element={<Subject  />} />
               <Route path="adde" element={<AddSubject />} />
@@ -114,7 +169,7 @@ function App() {
               <Route path="quessub/:idsubject">
 
 <Route index element={<QuestionSubject  />} />
-{/* <Route path="edits/:questionId" element={<EditQuestion />} />  */}
+<Route path="edits/:questionId" element={<EditQuestion />} /> 
 <Route path="addee" element={<AddQuestionSub />} /> 
 
 </Route>
@@ -142,7 +197,7 @@ function App() {
             
 
               
-            </Route>
+            </Route> */}
 
             <Route path="/notifcation">
               <Route index element={<Notication  />} />

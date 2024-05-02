@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const QuestionSubject = () => {
-  const { idsubject, lessonId } = useParams();
+  const { idsubject, lessonId ,Idclass,Idsection } = useParams();
   const [questions, setQuestions] = useState([]);
   const [selectedAnswers, setSelectedAnswers] = useState({});
 
@@ -103,7 +103,7 @@ const QuestionSubject = () => {
         <div className="cantano">
           <div className="adde ">
             <Link
-             to={`/lessons/quessub/${idsubject}/addee`} className='add'>Add Question</Link>
+             to={`/classes/section/${Idclass}/lessons/${Idsection}/quessub/${idsubject}/addee`} className='add'>Add Question</Link>
           </div>
           <p className="gtr">Data has been added successfully</p>
           <h2>Questions About the Subject</h2>
@@ -129,7 +129,7 @@ const QuestionSubject = () => {
 
                 <div className='buttons'>
                   <button onClick={() => handleDelete(question.id)}>delete</button>
-                  <Link to={`/lessons/lesson/${idsubject}/question/${lessonId}/edits/${question.id}`} className='edite'>Edit</Link>
+                  <Link to={`/classes/section/${Idclass}/lessons/${Idsection}/lesson/${idsubject}/question/${lessonId}/edits/${question.id}`} className='edite'>Edit</Link>
                 </div>
               </div>
             ))}

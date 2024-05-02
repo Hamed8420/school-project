@@ -11,6 +11,7 @@ import { useParams } from 'react-router-dom';
 const StudentTable = () => {
   const [students, setStudents] = useState([]);
   const { Idnot } = useParams();
+  console.log(Idnot)
 
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
@@ -22,6 +23,7 @@ const StudentTable = () => {
     })
       .then(response => {
         setStudents(response.data.requests);
+        console.log(response.data.requests)
       })
       .catch(error => {
         console.log(error);
@@ -38,8 +40,7 @@ const StudentTable = () => {
     })
       .then(response => {
         console.log(response.data);
-        
-        // إزالة الطلب المحذوف محليًا من القائمة
+ 
         setStudents(students.filter(student => student.id !== studentId));
       })
       .catch(error => {
@@ -61,7 +62,7 @@ const StudentTable = () => {
       .then(response => {
         console.log(response.data);
         
-        // تحديث حالة الطالب المحدثة محليًا
+  
         const updatedStudents = students.map(student => {
           if (student.id === studentId) {
             return {
@@ -109,6 +110,7 @@ const StudentTable = () => {
             <tbody>
               {students.map((student) => (
                 <tr key={student.User.id} className="student">
+                
                   <td>
                     <span className='gre'>{student.User.firstName}</span>
                   </td>

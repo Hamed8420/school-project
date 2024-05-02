@@ -3,11 +3,13 @@ import axios from 'axios';
 // import { createBrowserHistory } from 'history';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
+import { useParams } from 'react-router-dom';
 
 const AddSubject = () => {
     const [name, setName] = useState('');
     const [minimumSuccess, setMinimumSuccess] = useState('');
     const [image, setImage] = useState(null);
+    const {Idclass} = useParams()
 
      const handleAddSubject = async () => {
     try {
@@ -23,6 +25,7 @@ const AddSubject = () => {
       formData.append('minimumSuccess', minimumSuccess);
       formData.append('teacherId', '6');
       formData.append('image', image);
+      formData.append('ClassId',Idclass)
 
       const response = await axios.post('http://localhost:8000/api/subject/addSubject', formData, config);
       console.log(response.data); // تعامل مع الاستجابة هنا
